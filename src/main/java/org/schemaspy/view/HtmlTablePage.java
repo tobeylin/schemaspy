@@ -104,6 +104,7 @@ public class HtmlTablePage {
                 .addToScope("diagramExists", DiagramUtil.diagramExists(diagrams))
                 .addToScope("indexExists", indexExists(table, indexedColumns))
                 .addToScope("definitionExists", definitionExists(table))
+                .addToScope("extras", Markdown.toHtml("./table_track_index.md"))
                 .depth(1)
                 .getPageData();
 

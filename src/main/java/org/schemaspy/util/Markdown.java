@@ -26,6 +26,8 @@ import com.vladsch.flexmark.profiles.pegdown.Extensions;
 import com.vladsch.flexmark.profiles.pegdown.PegdownOptionsAdapter;
 import com.vladsch.flexmark.util.options.DataHolder;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -58,6 +60,14 @@ public class Markdown {
         }
 
         return text;
+    }
+
+    public static String toHtml(String markdownFilePath) throws IOException {
+        FileReader reader = new FileReader(markdownFilePath);
+        Node content = PARSER.parseReader(reader);
+        reader.close();
+
+        return RENDERER.render(content).trim();
     }
 
     public static void registryPage(String name, String path) {

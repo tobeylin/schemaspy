@@ -160,3 +160,7 @@ td.diagram  {
 .dataTables_filter .input-sm {
   padding-left: 13px;
 }
+
+div.external-doc-wrapper table {
+    border: 1px solid #f4f4f4;
+}

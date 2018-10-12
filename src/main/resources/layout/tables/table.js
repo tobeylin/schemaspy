@@ -3,6 +3,16 @@ function enableAnchors() {
     anchors.add('h3');
 }
 
+function setTableInExtra() {
+    var tablesInExtra = $('#extras_container table');
+    for (var table in tablesInExtra) {
+        table.classList.add('table');
+        table.classList.add('table-bordered');
+        table.classList.add('table-striped');
+        table.classList.add('dataTable');
+    }
+}
+
 $(document).ready(function() {
     enableAnchors();
 
@@ -38,6 +48,8 @@ $(document).ready(function() {
 
     //schemaSpy.js
     dataTableExportButtons(table);
+
+    setTableInExtra();
 } );
 
 $(document).ready(function() {
